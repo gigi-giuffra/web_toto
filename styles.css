@@ -1,0 +1,114 @@
+:root {
+  --hero-image: url("assets/portada-rocas.jpg");
+  --background-color: #ffffff;
+  --text-color: #111111;
+  --muted-color: #555555;
+  --accent-color: #1d1d1d;
+  --max-width: 960px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: var(--background-color);
+  color: var(--text-color);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  padding: 3rem;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 1.5rem;
+    grid-template-rows: auto minmax(320px, 1fr) auto;
+  }
+}
+
+.hero__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero__brand,
+.hero__menu {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.hero__image {
+  background-image: var(--hero-image);
+  background-size: cover;
+  background-position: center;
+  border-radius: 1.5rem;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.2);
+}
+
+.hero__footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted-color);
+}
+
+.content {
+  max-width: var(--max-width);
+  width: min(90%, var(--max-width));
+  margin: 4rem auto;
+  display: grid;
+  gap: 3rem;
+}
+
+.content__section {
+  display: grid;
+  gap: 1rem;
+}
+
+.content__section h2 {
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.content__section p,
+.content__section li {
+  line-height: 1.6;
+  color: var(--muted-color);
+}
+
+.content__section ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+code {
+  font-family: "Fira Code", "Courier New", monospace;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 0.2em 0.4em;
+  border-radius: 0.4em;
+}
